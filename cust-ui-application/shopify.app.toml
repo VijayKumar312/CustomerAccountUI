@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "834e815931c03b3182d7303729747f45"
+name = "cust-ui-application"
+handle = "cust-ui-application"
+application_url = "https://themselves-settings-describing-potter.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "extension-learning.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://themselves-settings-describing-potter.trycloudflare.com/auth/callback",
+  "https://themselves-settings-describing-potter.trycloudflare.com/auth/shopify/callback",
+  "https://themselves-settings-describing-potter.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[pos]
+embedded = false
