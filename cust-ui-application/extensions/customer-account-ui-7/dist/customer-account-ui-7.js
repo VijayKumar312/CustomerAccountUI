@@ -2496,7 +2496,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment = 7;
+          var Fragment2 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -2636,7 +2636,7 @@
                 return "DehydratedFragment";
               case ForwardRef:
                 return getWrappedName$1(type, type.render, "ForwardRef");
-              case Fragment:
+              case Fragment2:
                 return "Fragment";
               case HostComponent:
                 return type;
@@ -7054,7 +7054,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment) {
+              if (current2 === null || current2.tag !== Fragment2) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -7457,7 +7457,7 @@
                 if (child.key === key) {
                   var elementType = element.type;
                   if (elementType === REACT_FRAGMENT_TYPE) {
-                    if (child.tag === Fragment) {
+                    if (child.tag === Fragment2) {
                       deleteRemainingChildren(returnFiber, child.sibling);
                       var existing = useFiber(child, element.props.children);
                       existing.return = returnFiber;
@@ -11634,7 +11634,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment:
+              case Fragment2:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -12075,7 +12075,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment:
+              case Fragment2:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -16841,7 +16841,7 @@
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment, elements, key, mode);
+            var fiber = createFiber(Fragment2, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -18417,11 +18417,11 @@
               return jsxWithValidation(type, props, key, false);
             }
           }
-          var jsx5 = jsxWithValidationDynamic;
-          var jsxs2 = jsxWithValidationStatic;
+          var jsx7 = jsxWithValidationDynamic;
+          var jsxs3 = jsxWithValidationStatic;
           exports.Fragment = REACT_FRAGMENT_TYPE;
-          exports.jsx = jsx5;
-          exports.jsxs = jsxs2;
+          exports.jsx = jsx7;
+          exports.jsxs = jsxs3;
         })();
       }
     }
@@ -19137,20 +19137,44 @@
   // node_modules/@shopify/ui-extensions/build/esm/surfaces/customer-account/extension.mjs
   var extension = createExtensionRegistrationFunction();
 
-  // node_modules/@shopify/ui-extensions/build/esm/surfaces/customer-account/components/ImageGroup/ImageGroup.mjs
-  var ImageGroup = createRemoteComponent("ImageGroup");
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/customer-account/components/Card/Card.mjs
+  var Card = createRemoteComponent("Card");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/customer-account/components/Page/Page.mjs
+  var Page = createRemoteComponent("Page");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/customer-account/components/ResourceItem/ResourceItem.mjs
+  var ResourceItem = createRemoteComponent("ResourceItem");
 
   // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/BlockStack/BlockStack.mjs
   var BlockStack = createRemoteComponent("BlockStack");
 
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Button/Button.mjs
+  var Button = createRemoteComponent("Button");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Grid/Grid.mjs
+  var Grid = createRemoteComponent("Grid");
+
   // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Image/Image.mjs
   var Image = createRemoteComponent("Image");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/InlineStack/InlineStack.mjs
+  var InlineStack = createRemoteComponent("InlineStack");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Link/Link.mjs
+  var Link = createRemoteComponent("Link");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/SkeletonImage/SkeletonImage.mjs
+  var SkeletonImage = createRemoteComponent("SkeletonImage");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/SkeletonText/SkeletonText.mjs
+  var SkeletonText = createRemoteComponent("SkeletonText");
 
   // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Text/Text.mjs
   var Text = createRemoteComponent("Text");
 
-  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/View/View.mjs
-  var View = createRemoteComponent("View");
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/TextBlock/TextBlock.mjs
+  var TextBlock = createRemoteComponent("TextBlock");
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/render.mjs
   var import_react6 = __toESM(require_react(), 1);
@@ -19480,23 +19504,55 @@ ${errorInfo.componentStack}`);
     }
   };
 
-  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/components/ImageGroup/ImageGroup.mjs
-  var ImageGroup2 = createRemoteReactComponent(ImageGroup);
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/components/Card/Card.mjs
+  var Card2 = createRemoteReactComponent(Card);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/components/Page/Page.mjs
+  var Page2 = createRemoteReactComponent(Page, {
+    fragmentProps: ["primaryAction", "secondaryAction"]
+  });
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/components/ResourceItem/ResourceItem.mjs
+  var ResourceItem2 = createRemoteReactComponent(ResourceItem, {
+    fragmentProps: ["action"]
+  });
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/BlockStack/BlockStack.mjs
   var BlockStack2 = createRemoteReactComponent(BlockStack);
 
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Button/Button.mjs
+  var Button2 = createRemoteReactComponent(Button, {
+    fragmentProps: ["overlay"]
+  });
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Grid/Grid.mjs
+  var Grid2 = createRemoteReactComponent(Grid);
+
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Image/Image.mjs
   var Image2 = createRemoteReactComponent(Image);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/InlineStack/InlineStack.mjs
+  var InlineStack2 = createRemoteReactComponent(InlineStack);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Link/Link.mjs
+  var Link2 = createRemoteReactComponent(Link, {
+    fragmentProps: ["overlay"]
+  });
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/SkeletonImage/SkeletonImage.mjs
+  var SkeletonImage2 = createRemoteReactComponent(SkeletonImage);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/SkeletonText/SkeletonText.mjs
+  var SkeletonText2 = createRemoteReactComponent(SkeletonText);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Text/Text.mjs
   var Text2 = createRemoteReactComponent(Text);
 
-  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/View/View.mjs
-  var View2 = createRemoteReactComponent(View);
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/TextBlock/TextBlock.mjs
+  var TextBlock2 = createRemoteReactComponent(TextBlock);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/hooks/api.mjs
-  var import_react13 = __toESM(require_react(), 1);
+  var import_react21 = __toESM(require_react(), 1);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/errors.mjs
   var CustomerAccountUIExtensionError = class extends Error {
@@ -19505,69 +19561,139 @@ ${errorInfo.componentStack}`);
       this.name = "CustomerAccountUIExtensionError";
     }
   };
-  var ExtensionHasNoFieldError = class extends Error {
-    constructor(field, target) {
-      super(`Cannot access '${field}' on target '${target}'. The corresponding property was not found on the API.`);
-      this.name = "ExtensionHasNoFieldrror";
-    }
-  };
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/hooks/api.mjs
   function useApi() {
-    const api = (0, import_react13.useContext)(ExtensionApiContext);
+    const api = (0, import_react21.useContext)(ExtensionApiContext);
     if (api == null) {
       throw new CustomerAccountUIExtensionError("You can only call this hook when running as a customer account UI extension.");
     }
     return api;
   }
 
-  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/hooks/subscription.mjs
-  var import_react14 = __toESM(require_react(), 1);
-  function useSubscription(subscription) {
-    const [, setValue] = (0, import_react14.useState)(subscription.current);
-    (0, import_react14.useEffect)(() => {
-      let didUnsubscribe = false;
-      const checkForUpdates = (newValue) => {
-        if (didUnsubscribe) {
-          return;
-        }
-        setValue(newValue);
-      };
-      const unsubscribe = subscription.subscribe(checkForUpdates);
-      checkForUpdates(subscription.current);
-      return () => {
-        didUnsubscribe = true;
-        unsubscribe();
-      };
-    }, [subscription]);
-    return subscription.current;
-  }
-
-  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/customer-account/hooks/settings.mjs
-  function useSettings() {
-    const api = useApi();
-    const extensionTarget = api.extension.target;
-    if (!("settings" in api)) {
-      throw new ExtensionHasNoFieldError("settings", extensionTarget);
-    }
-    const settings = useSubscription(api.settings);
-    return settings;
-  }
-
-  // extensions/customer-account-ui-2/src/MenuActionExtension.tsx
+  // extensions/customer-account-ui-7/src/MenuActionExtension.jsx
   var import_jsx_runtime4 = __toESM(require_jsx_runtime());
-  var MenuActionExtension_default = reactExtension("customer-account.order-status.block.render", () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Extension, {}));
-  function Extension() {
-    const { image_1, image_2, image_3, image_4 } = useSettings();
-    console.log("page called");
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(BlockStack2, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Text2, { children: "Image Grid Here" }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(View2, { minInlineSize: 300, children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(ImageGroup2, { variant: "grid", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: image_1 }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: image_2 }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Image2, { source: image_3 })
-      ] }) })
-    ] });
+  var MenuActionExtension_default = reactExtension(
+    "customer-account.order.action.menu-item.render",
+    () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(MenuActionExtension, {})
+  );
+  function MenuActionExtension() {
+    const { i18n } = useApi();
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Button2, { to: "extension:/", children: i18n.translate("menuItemButton") });
+  }
+
+  // extensions/customer-account-ui-7/src/FullPageExtension.jsx
+  var import_react22 = __toESM(require_react());
+  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
+  var FullPageExtension_default = reactExtension("customer-account.page.render", () => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(FullPageExtension, {}));
+  function FullPageExtension() {
+    const { i18n, query } = useApi();
+    const [wishlist, setWishlist] = (0, import_react22.useState)([]);
+    const [loading, setLoading] = (0, import_react22.useState)(false);
+    const [removeLoading, setRemoveLoading] = (0, import_react22.useState)({ id: null, loading: false });
+    function fetchWishlist() {
+      return __async(this, null, function* () {
+        var _a, _b;
+        setLoading(true);
+        try {
+          const data = yield query(
+            `query ($first: Int!) {
+          products(first: $first) {
+            nodes {
+              id
+              title
+              onlineStoreUrl
+              priceRange {
+                minVariantPrice {
+                  amount
+                  currencyCode
+                }
+                maxVariantPrice {
+                  amount
+                  currencyCode
+                }
+              }
+              featuredImage {
+                url
+              }
+            }
+          }
+        }`,
+            {
+              variables: { first: 10 }
+            }
+          );
+          setLoading(false);
+          setWishlist(((_b = (_a = data.data) == null ? void 0 : _a.products) == null ? void 0 : _b.nodes) || []);
+        } catch (error) {
+          setLoading(false);
+          console.log(error);
+        }
+      });
+    }
+    function deleteWishlistItem(id) {
+      return __async(this, null, function* () {
+        setRemoveLoading({ loading: true, id });
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            setWishlist(wishlist.filter((item) => item.id !== id));
+            setRemoveLoading({ loading: false, id: null });
+            resolve();
+          }, 750);
+        });
+      });
+    }
+    (0, import_react22.useEffect)(() => {
+      fetchWishlist();
+    }, []);
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Page2, { title: "Wishlist", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(Grid2, { columns: ["fill", "fill", "fill"], rows: "auto", spacing: "loose", children: [
+      loading && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(ResourceItem2, { loading: true, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(BlockStack2, { spacing: "base", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(SkeletonImage2, { inlineSize: "fill", aspectRatio: 1, blockSize: "fill" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(BlockStack2, { spacing: "none", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(SkeletonText2, { inlineSize: "base" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(SkeletonText2, { inlineSize: "small" })
+      ] }) }),
+      !loading && wishlist.length > 0 && wishlist.map((product) => {
+        return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+          ResourceItem2,
+          {
+            loading,
+            action: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Button2, { kind: "primary", to: product.onlineStoreUrl, children: "View product" }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
+                Button2,
+                {
+                  kind: "secondary",
+                  loading: removeLoading.loading && product.id === removeLoading.id,
+                  onPress: () => {
+                    deleteWishlistItem(product.id);
+                  },
+                  children: "Remove"
+                }
+              )
+            ] }),
+            children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(BlockStack2, { spacing: "base", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Image2, { source: product.featuredImage.url }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TextBlock2, { emphasis: "bold", children: product.title }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TextBlock2, { appearance: "subdued", children: i18n.formatCurrency(product.priceRange.minVariantPrice.amount, {
+                currency: product.priceRange.minVariantPrice.currencyCode
+              }) })
+            ] })
+          },
+          product.id
+        );
+      }),
+      !loading && wishlist.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TextBlock2, { children: "No items in your wishlist." })
+    ] }) });
+  }
+
+  // extensions/customer-account-ui-7/src/ProfileBlockExtension.jsx
+  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
+  var ProfileBlockExtension_default = reactExtension("customer-account.profile.block.render", () => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(BlockExtension, {}));
+  function BlockExtension() {
+    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Card2, { padding: true, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(InlineStack2, { inlineAlignment: "center", spacing: "tight", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Text2, { children: "Grow your garden with more plants from your wishlist." }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link2, { to: "extension:/", children: "View wishlist" })
+    ] }) });
   }
 })();
-//# sourceMappingURL=customer-account-ui-2.js.map
+//# sourceMappingURL=customer-account-ui-7.js.map
