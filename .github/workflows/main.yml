@@ -21,7 +21,7 @@ jobs:
         env:
           # Token from the Partner Dashboard
           SHOPIFY_CLI_PARTNERS_TOKEN: ${{ secrets.SHOPIFY_CLI_PARTNERS_TOKEN }}
-          COMMIT_URL: ${{ github.https://github.com }}/${{ github.CustomerAccountUI }}/commit/${{ github.sha }}
+          COMMIT_URL: ${{ https://github.com }}/${{ CustomerAccountUI }}/commit/${{ github.sha }}
           # .env content after a deploy
           SHOPIFY_API_KEY: "834e815931c03b3182d7303729747f45"
         run: shopify app deploy -f --source-control-url "$COMMIT_URL"
