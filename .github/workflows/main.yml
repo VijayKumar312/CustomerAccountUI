@@ -10,7 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v3
-      - name: change directory
           node-version: 18
           cache: 'npm'
       - name: Install npm dependencies
