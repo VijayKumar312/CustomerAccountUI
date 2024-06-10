@@ -11,16 +11,17 @@ import {
 export default reactExtension('customer-account.order-status.block.render', () => <Extension />);
 
 function Extension() {
-  const { image_1, image_2, image_3, image_4 } = useSettings();
-  console.log('page called');
+  const { image_1, image_2, image_3 } = useSettings();
+  // console.log('page called');
 
   return (
     <BlockStack>
       <Text>Image Grid Here</Text>
       <View minInlineSize={300}>
-        <ImageGroup variant="grid">
+        <ImageGroup variant="inline-stack">
           <Image source={image_1} />
           <Image source={image_2} />
+          <Image source={image_3} />
           <Image source={image_3} />
         </ImageGroup>
       </View>

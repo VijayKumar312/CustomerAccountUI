@@ -21,24 +21,29 @@ function UpdateOrderExtension() {
   const [error, setError] = useState(null);
 
   const metafields = useMetafields();
-  console.log(metafields, 'List is here');
+  // console.log(metafields, 'List is here');
 
   useEffect(() => {
     const fetchMetafield = async () => {
       console.log('Entered');
       try {
         const response = await query(
-          `query($orderId: ID!) {
-            order(id: $orderId) {
-              metafield(namespace: "custom", key: "customer_order_status_page") {
-                value
+          `query{
+            order(id: "gid://shopify/Order/5863943995683") {
+              id
+              metafields(namespace: "custom", first: 5) {
+                nodes {
+                  key
+                  namespace
+                  value
+                }
               }
             }
-          }`,
-          { variables: { orderId } },
+            }`,
         );
+        console.log(response);
         const data = response?.data?.order?.metafield;
-        console.log(data, 'my data');
+        // console.log(data, 'my data');
         setMetafield(data);
       } catch (error) {
         setError(error);
