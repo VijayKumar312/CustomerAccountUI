@@ -11,5 +11,4 @@ database.sqlite
 
 .env.cust-ui-application7
 .env
-package-lock.json
-yarn.lock
+
