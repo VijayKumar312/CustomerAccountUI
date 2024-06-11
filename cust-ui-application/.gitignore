@@ -1,5 +1,4 @@
 node_modules
-/.env.cust-ui-application7
 /.cache
 /build
 /app/build
@@ -10,6 +9,7 @@ node_modules
 /prisma/dev.sqlite-journal
 database.sqlite
 
+.env.cust-ui-application7
 .env
 package-lock.json
 yarn.lock
