@@ -1,5 +1,5 @@
 node_modules
-
+/.env.cust-ui-application7
 /.cache
 /build
 /app/build
